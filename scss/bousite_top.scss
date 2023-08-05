@@ -1,0 +1,138 @@
+@use "bousai_origin" as l;
+@use "bousai_template";
+@use "bousai_list";
+@use "bousai_header";
+@use "bousai_footer";
+
+// topページ ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓----------
+#top {
+  width: 100%;
+  max-width: 714px;
+  margin: 0 auto;
+}
+.top-main {
+  display: block;
+  position: relative;
+  margin: 0 16px;
+  @media screen and (min-width: 599px) {
+    margin: 0 0;
+  }
+}
+
+.top-bousai-logo {
+  margin-top: -39px;
+  width: 210px;
+  min-height: 118px;
+  @media screen and (min-width: 599px) {
+    width: 250px;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+    max-width: 210px;
+  }
+}
+
+.top-lead-h3 {
+  margin: 10px 0 0px 0;
+  max-width: 714px;
+}
+
+#content-menu {
+  margin: 30px auto 0 auto;
+  max-width: 714px;
+  @media screen and (min-width: 599px) {
+    margin: 20px auto 0 auto;
+  }
+}
+
+.content-menu-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 714px;
+  @media screen and (min-width: 599px) {
+    margin-right: 35px;
+  }
+}
+
+.content {
+  display: block;
+  position: relative;
+  max-width: 599px;
+  margin: 0 60px;
+  padding: 30px 0;
+
+  @media screen and (min-width: 599px) {
+    margin: 0 0;
+    width: auto;
+    flex-basis: calc(45% - 0px);
+  }
+}
+
+.content-headline-img {
+  display: flex;
+}
+
+.content-headline-right,
+.content-headline-left {
+  top: 0;
+  position: absolute;
+  background-color: white;
+  border: solid 3px l.$main-b-c;
+  border-radius: 2px;
+  padding: 10px;
+  img {
+    width: 40px;
+  }
+
+  &:hover {
+    background-color: l.$main-bgy-c;
+  }
+}
+
+.content-headline-right {
+  right: -30px;
+}
+
+.content-headline-left {
+  left: -30px;
+  @media screen and (min-width: 599px) {
+    left: auto;
+    right: -30px;
+  }
+}
+
+.content-img {
+  display: inline-block;
+  text-align: center;
+  height: 250px;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 5px;
+    filter: sepia(50%) contrast(130%);
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.99;
+      filter: none;
+    }
+  }
+}
+
+.content-element {
+  text-align: left;
+
+  p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 10px 0 0 0;
+    text-align: justify;
+  }
+}

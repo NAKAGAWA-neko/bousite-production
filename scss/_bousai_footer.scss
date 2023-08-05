@@ -1,0 +1,21 @@
+@use "bousai_origin" as l;
+
+// footer --------------------------------------------------------
+
+#gototop {
+  margin: 0 auto;
+  max-width: 714px;
+  position: relative;
+  cursor: pointer;
+  z-index: 500;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    width: 39px;
+    @media screen and (min-width: 599px) {
+      top: -30px;
+    }
+  }
+}

@@ -1,0 +1,238 @@
+@use "bousai_origin" as l;
+
+//bodyやフォントなど
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, HelveticaNeue,
+    Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica Neue, HelveticaNeue,
+    Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
+  margin: 0 auto;
+  color: l.$main-b-c;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: white;
+  min-width: 320px;
+
+  @media screen and (min-width: 599px) {
+    line-height: 1.7;
+  }
+}
+
+// 文字と線 ----------------------------
+a {
+  text-decoration: none;
+  color: l.$main-b-c;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+p {
+  font-size: 16px;
+  margin: 0;
+}
+
+p {
+  color: l.$main-b-c;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: l.$main-y-c;
+}
+
+h2 {
+  margin: 30px auto 21px auto;
+  text-align: center;
+
+  img {
+    height: 50px;
+    width: auto;
+  }
+}
+
+// h3はリード
+h3 {
+  font-weight: 500;
+  color: l.$main-b-c;
+  text-align: justify;
+  line-height: 1.5;
+  @media screen and (min-width: 599px) {
+    line-height: 1.7;
+  }
+}
+
+// h4はtopの縦画像
+h4 {
+  color: l.$main-b-c;
+  line-height: 1;
+  z-index: 800;
+}
+
+//各コンテンツ見出し
+h5 {
+  font-size: 23px;
+  color: l.$main-b-c;
+  position: relative;
+  margin-bottom: 3px;
+  line-height: 1.25;
+  padding-left: 1em;
+  text-indent: -1em;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+
+    background-image: url(/images/bousai-mark.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin: -1px 5px 5px 0;
+  }
+}
+
+.h5sub {
+  font-size: 16px;
+  font-weight: 600;
+  margin: -8px 0 0 20px;
+}
+
+//h6 記事リンクの見出し
+h6 {
+  font-size: 23px;
+  text-align: center;
+  margin-bottom: 5px;
+  color: l.$main-b-c;
+}
+
+.lead {
+  margin: 15px 0 0 0;
+  @media screen and (min-width: 599px) {
+  }
+}
+.credit {
+  font-size: 14px;
+  text-align: right;
+  color: l.$main-b-c;
+  margin: 5px 0 0 0;
+  line-height: 1.5;
+}
+
+.notes {
+  font-size: 14px;
+  margin-top: 3px;
+  text-align: justify;
+  line-height: 1.3;
+  margin-top: 5px;
+}
+
+.caption {
+  margin-top: 3px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.border-max {
+  width: 100%;
+  background-color: l.$main-b-c;
+  height: 3px;
+  width: calc(100% + 32px); /* 左右のマージンを考慮した幅に設定 */
+  margin: 30px -16px; /* 上下のマージンを指定 */
+}
+
+.border-1px {
+  width: 100%;
+  background-color: l.$main-b-c;
+  height: 1px;
+  margin: 20px 0 20px 0;
+}
+
+.border-1px-gry {
+  width: 100%;
+  background-color: l.$main-gry-c;
+  height: 1px;
+  margin: 20px 0 20px 0;
+}
+
+.border-03px {
+  width: 100%;
+  background-color: l.$main-b-c;
+  opacity: 0.3;
+  height: 1px;
+  margin: 20px 0 20px 0;
+}
+
+//強制改行
+.newline {
+  @media screen and (min-width: 599px) {
+    display: none;
+  }
+}
+
+.newline360 {
+  @media screen and (min-width: 360px) {
+    display: none;
+  }
+}
+
+.newline400 {
+  @media screen and (min-width: 400px) {
+    display: none;
+  }
+}
+
+.newline550 {
+  @media screen and (min-width: 550px) {
+    display: none;
+  }
+}
+
+.moji-right {
+  text-align: right;
+}
+
+.margin-top10 {
+  margin-top: 10px;
+}
+
+.margin-top50 {
+  margin-top: 50px;
+}
+
+.margin-top30 {
+  margin-top: 30px;
+}
+
+.margin-bottom20 {
+  margin-bottom: 20px;
+}
+
+.margin-bottom10 {
+  margin-bottom: 10px;
+}

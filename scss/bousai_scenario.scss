@@ -1,0 +1,204 @@
+@use "bousai_origin" as l;
+@use "bousai_template";
+@use "bousai_list";
+@use "bousai_header";
+@use "bousai_footer";
+@use "bousai_item";
+
+//シナリオ
+
+@mixin fukidashi-triangle($left) {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: $left;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid l.$main-bgy-c;
+}
+
+.margin-bottom20 {
+  margin-bottom: 20px;
+}
+
+#scenario-group-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.scenario-group {
+  flex-basis: 48%; /* アイテムの基本的な幅を33%に */
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  @media screen and (min-width: 599px) {
+    flex-basis: 31%; /* アイテムの基本的な幅を33%に */
+  }
+}
+
+.scenario-item_main {
+  position: relative;
+  // background-color: black;
+
+  img {
+    width: 100%;
+  }
+}
+
+.scenario_title {
+  font-weight: 600;
+  color: white;
+  text-align: justify;
+  line-height: 1.4;
+  padding: 0 10px 10px 10px;
+}
+
+.scenario_text {
+  flex-basis: 100%; /* extra-contentの幅は100% */
+  text-align: justify;
+}
+
+.scenariohidden {
+  display: none;
+}
+
+.fukidashi-main {
+  margin: 16px 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  background: l.$main-bgy-c;
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+
+  p {
+    color: l.$main-b-c;
+    padding: 0 16px 0 16px;
+    line-height: 1.5;
+
+    @media screen and (min-width: 599px) {
+      line-height: 1.6;
+    }
+  }
+}
+
+.fukidashi-title {
+  margin: 16px 16px 10px 16px;
+  font-size: 18px;
+  font-weight: 600;
+
+  @media screen and (min-width: 599px) {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.fukidashi-ta-l-l {
+  &:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 82.5%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-bottom: 15px solid l.$main-bgy-c;
+  }
+}
+
+.fukidashi-ta-l-l {
+  &:before {
+    @include fukidashi-triangle(25%);
+    @media screen and (min-width: 599px) {
+      left: 15%;
+    }
+  }
+}
+
+.fukidashi-ta-r-c {
+  &:before {
+    @include fukidashi-triangle(75%);
+    @media screen and (min-width: 599px) {
+      left: 50%;
+    }
+  }
+}
+
+.fukidashi-ta-l-r {
+  &:before {
+    @include fukidashi-triangle(25%);
+    @media screen and (min-width: 599px) {
+      left: 85%;
+    }
+  }
+}
+
+.fukidashi-ta-r-l {
+  &:before {
+    @include fukidashi-triangle(75%);
+    @media screen and (min-width: 599px) {
+      left: 15%;
+    }
+  }
+}
+
+.fukidashi-ta-l-c {
+  &:before {
+    @include fukidashi-triangle(25%);
+    @media screen and (min-width: 599px) {
+      left: 50%;
+    }
+  }
+}
+
+.fukidashi-ta-r-r {
+  &:before {
+    @include fukidashi-triangle(75%);
+    @media screen and (min-width: 599px) {
+      left: 85%;
+    }
+  }
+}
+
+.fukidashi-footer {
+  display: flex;
+  justify-content: space-between; // 追加: 子要素間のスペースを均等に分散
+  align-items: center; // 追加: 子要素を垂直方向にセンタリング
+  margin: 10px 12px 10px 12px;
+}
+
+.fukidashi-link {
+  flex-grow: 1; // 追加: 残りの空間を全て占有
+  display: flex; // 追加: フレックスボックスとして設定
+  justify-content: center; // 追加: 子要素を水平方向にセンタリング
+  margin-left: 39px;
+
+  a {
+    background-color: l.$main-b-c;
+    border-radius: 10px;
+    padding: 6px 20px;
+    text-align: center;
+    font-weight: 700;
+    color: l.$main-y-c;
+  }
+}
+
+.fukidashi-btn {
+  display: flex; // 追加: フレックスボックスとして設定
+  justify-content: flex-end; // 追加: 子要素を右寄せ
+}
+
+.fukidashi-close-btn {
+  text-align: right;
+  width: 39px;
+  background-color: transparent;
+  border: none;
+  opacity: 0.6;
+  cursor: pointer;
+
+  transform: translateY(6px); // 10px分下に移動
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#19170d" />
+    <link rel="stylesheet" href="src/style/earthquake_tsunami.css" />
+
+    <title>地震と津波の災害データ / 防災サイト「防サイト」/</title>
+  </head>
+  <body>
+    <header>
+      <section id="bousai-header">
+        <div class="bousai-header-bg">
+          <div class="bousai-header-bg-line"></div>
+        </div>
+        <!-- navi--------------------- -->
+
+        <div class="navi-main">
+          <div class="navi-btn-main">
+            <div class="naviBtn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <nav class="naviSp">
+              <ul class="menu-ul">
+                <li class="menu">
+                  <a href="great_kanto_earthquake.html">関東大震災</a>
+                </li>
+                <li class="menu">
+                  <a href="earthquake_tsunami.html">地震と津波</a>
+                </li>
+                <li class="menu">
+                  <a href="typhoon_heavyrain.html">台風と大雨</a>
+                </li>
+                <li class="menu"><a href="volcanic_eruption.html">火山噴火</a></li>
+                <li class="menu"><a href="bousai_evacuation.html">避難</a></li>
+                <li class="menu">
+                  <a href="bousai_scenario.html">災害のシナリオ</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- logo headline--------------------- -->
+    <div class="bousai-logo_headline-main">
+      <div class="bousai-logo_headline">
+        <div class="bousai-logo">
+          <a href="index.html"
+            ><img src="images/bousai-logo.svg" alt="防サイトのトップページへ"
+          /></a>
+        </div>
+        <div class="page-headline">
+          <h1>
+            <img src="images/quake_tsunami_title.svg" alt="関東大震災" />
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section id="content-page">
+        <div class="lead">
+          <h3 class="h3_text_only">
+            関東大震災100年にあたる今年、防災の一環として、関東大震災100年にあたる今年さまざまな災害のデータを見てみる関東大震災100年にあたる今年さまざまな災害のデータを見てみる関東大震災100年にあたる今年さまざまな災害のデータを見てみるさまざまな災害のデータを見てみる。近年は地震も多い印象
+            関東大震災100年にあたる今年さまざまな災害のデータを見てみる。近年は地震も多い印象
+          </h3>
+        </div>
+
+        <div class="content-main">
+          <div class="content-group upface_op">
+            <h5>震度1以上の揺れを観測した回数</h5>
+            <p class="notes">※1919～2023年。23年はX月まで。気象庁から</p>
+            <div class="content-chart chartsize350">
+              <canvas id="jisinChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-group upface_op">
+          <h5>都道府県別 震度4以上の揺れを観測した回数</h5>
+          <p class="notes">
+            ※1919～2023年。23年はX月まで。東京都は伊豆諸島の577回を含まない。気象庁から
+          </p>
+          <div class="content-chart">
+            <canvas id="eqdistrict" height="860"></canvas>
+          </div>
+        </div>
+
+        <div id="content-group-pc-flex">
+          <div class="content-group upface_op">
+            <h5>国内の最大震度6弱以上を観測した主な地震</h5>
+            <p class="notes">※気象庁から</p>
+            <div class="content-g_img">
+              <a
+                href="images/g_earthquake_japan.png"
+                data-lightbox="img01"
+                data-title="国内の最大震度6弱以上を観測した主な地震"
+              >
+                <img
+                  src="images/g_earthquake_japan.png"
+                  alt="国内の最大震度6弱以上を観測した主な地震"
+                />
+              </a>
+            </div>
+          </div>
+
+          <div class="content-group upface_op">
+            <h5>世界で発生した規模が大きい主な地震</h5>
+            <p class="notes">※気象庁から</p>
+            <div class="content-g_img">
+              <a
+                href="images/g_earthquake_world.png"
+                data-lightbox="img01"
+                data-title="世界で発生した規模が大きい主な地震"
+              >
+                <img src="images/g_earthquake_world.png" alt="世界で発生した規模が大きい主な地震" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-group upface_op">
+          <h5>緊急地震速報を発令した回数</h5>
+          <p class="notes">※2008～23年。23年はX月まで。気象庁から</p>
+          <div class="content-chart chartsize350">
+            <canvas id="jisinLineChart"></canvas>
+          </div>
+        </div>
+
+        <div class="content-group upface_op">
+          <h5>世界でM7以上の地震が起こった回数</h5>
+          <p class="notes">※1919～2023年。23年は6月まで。気象庁から</p>
+          <div class="content-chart chartsize350">
+            <canvas id="jisinWorldM7Chart"></canvas>
+          </div>
+        </div>
+
+        <div class="content-group upface_op content-group-title-separate">
+          <h5>過去に大きな被害が出た主な地震津波災害</h5>
+          <p class="notes">※気象庁から</p>
+        </div>
+
+        <div id="content-group-pc-flex">
+          <div class="content-group upface_op">
+            <div class="content-g_img">
+              <a
+                href="images/e-tsunami-1.png"
+                data-lightbox="img03"
+                data-title="国内の最大震度6弱以上を観測した主な地震"
+              >
+                <img src="images/e-tsunami-1.png" alt="国内の最大震度6弱以上を観測した主な地震" />
+              </a>
+            </div>
+          </div>
+
+          <div class="content-group upface_op">
+            <div class="content-g_img">
+              <a
+                href="images/e-tsunami-2.png"
+                data-lightbox="img03"
+                data-title="世界で発生した規模が大きい主な地震"
+              >
+                <img src="images/e-tsunami-2.png" alt="世界で発生した規模が大きい主な地震" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 地震の時はどのように行動したらいいか？ -->
+        <div class="justincase-main">
+          <div class="justincase margin-top50">
+            <h6>地震の時はどのように行動したらいいか？</h6>
+          </div>
+          <div class="notes moji-right">※首相官邸ホームページから</div>
+          <div class="justincase-lead">
+            地震の揺れを感じた場合、あるいは緊急地震速報を見聞きした場合は、あわてずにまずは身の安全を確保してください。
+            そして、落ち着いてテレビやラジオ、携帯電話やスマートフォンのワンセグやネット通信機能など、様々な手段を使って正確な情報の把握に努めましょう。
+          </div>
+          <div class="justincase-ul">
+            <p><span>屋内にいるとき</span></p>
+            <ul>
+              <li>頭を保護しながら大きな家具から離れ、丈夫な机の下などに隠れる</li>
+              <li>あわてて外に飛び出さない</li>
+              <li>
+                料理や暖房などで火を使っている場合、その場で火を消せるときは火の始末、火元から離れているときは無理に火を消しに行かない
+              </li>
+              <li>扉を開けて避難路を確保する</li>
+            </ul>
+
+            <p><span>人が大勢いる施設にいるとき</span></p>
+            <ul>
+              <li>あわてずに施設の係員や従業員などの指示に従う</li>
+              <li>
+                従業員などから指示がない場合は、その場で頭を保護し、揺れに備えて安全な姿勢をとる
+              </li>
+              <li>吊り下がっている照明などの下から退避するあわてて出口や階段に殺到しない</li>
+            </ul>
+
+            <p><span>エレベーターに乗っているとき</span></p>
+            <ul>
+              <li>最寄りの階で停止させて、すぐに降りる屋外にいるとき</li>
+              <li>ブロック塀の倒壊や自動販売機の転倒などに注意し、離れる</li>
+              <li>ビルの壁、看板や割れた窓ガラスなどの落下に注意して、建物から離れる</li>
+            </ul>
+
+            <p><span>山やがけ付近にいるとき</span></p>
+            <ul>
+              <li>落石やがけ崩れに注意し、できるだけその場から離れる</li>
+            </ul>
+
+            <p><span>鉄道・バスに乗っているとき</span></p>
+            <ul>
+              <li>つり革や手すりにしっかりつかまる</li>
+            </ul>
+
+            <p><span>自動車運転中</span></p>
+            <ul>
+              <li>あわてて急ハンドルや急ブレーキをかけず緩やかに速度を落とす</li>
+              <li>ハザードランプを点灯して周りの車に注意を促し、道路の左側に停止する</li>
+            </ul>
+
+            <p><span>大都市で地震に遭遇した時</span></p>
+            <ul>
+              <li>
+                まずは、身の安全を確保した後、むやみに移動を開始しないことが基本！安全な場所にとどまることを考えましょう。
+              </li>
+              <li>
+                道路では余震で頭上から物が落下してきたり、道中に火災が起こっていたりするなど、数多くの危険が予想されますので、安全な場所からはむやみに移動しないようにしましょう。
+              </li>
+              <li>
+                駅周辺等大混雑している場所では、人が将棋倒しになる集団転倒が起きやすくなりますので、駅周辺には近づかないようにしましょう。
+              </li>
+              <li>
+                発生3日程度は火災の発生や救助・救急活動優先のため、混乱状態が続きますので、まず身を守るために安全な場所にとどまることを考えましょう。
+              </li>
+            </ul>
+          </div>
+
+          <div class="justincase">
+            <div>
+              <h6><span>津波の時はどのように行動したらいいか？</span></h6>
+            </div>
+          </div>
+          <div class="notes moji-right moji-ma-top10">※首相官邸ホームページから</div>
+
+          <div class="justincase-ul">
+            <ul>
+              <li>
+                強い揺れや弱くても長い揺れを感じたら、また地震を体で感じなくても、「津波警報」等を見聞きしたら、いち早く海岸から離れ、可能な限り高い場所へ避難してください。
+              </li>
+              <li>
+                海水浴等により海岸付近にいる人は、「津波注意報」でも避難が必要です。海からあがる、海岸から離れるなど、すぐに避難を開始してください。
+              </li>
+              <li>
+                避難をする時は、近くの高台や津波避難タワー、津波避難ビルなどに向かってください。
+              </li>
+              <li>
+                第一波の引いた後に家に戻り第二波にのみこまれ被害に遭ったケースや、余震により再度津波が発生するケースもあり、津波警報・注意報が解除され安全が確認されるまでは決して被災地域には立ち入らないでください。
+              </li>
+              <li>
+                津波の災害から身を守るためには、日頃から津波に関する情報を収集したり、津波ハザードマップなどで家の周りの安全な避難場所を確認しておくことが必要です。
+              </li>
+              <li>
+                津波は想像を超える速さ、あるいは想像を超える場所からやってくることを認識しておきましょう。
+              </li>
+            </ul>
+
+            <div class="img-size-50 margin-bottom20">
+              <a
+                href="images/tsunami-alarm.png"
+                data-lightbox="img05"
+                data-title="津波警報・注意報の分類と、とるべき行動"
+              >
+                <img src="images/tsunami-alarm.png" alt="津波警報・注意報の分類と、とるべき行動" />
+              </a>
+            </div>
+
+            <p><span>もしものために「津波標識」の確認を！</span></p>
+            <ul>
+              <li>
+                津波の危険がある場所には、津波が来襲する危険があることを示す「津波注意」のほか、津波避難場所や津波避難ビルを示す津波標識が設置されています。万一に備え、海の近くにいるときには必ず確認しておきましょう。
+              </li>
+              <li>
+                また、最寄りの津波避難場所や津波避難ビル、高台などへの経路を確認しておきましょう。
+              </li>
+              <li>
+                避難をする時は、近くの高台や津波避難タワー、津波避難ビルなどに向かってください。
+              </li>
+              <li>日頃からハザードマップで危険箇所や避難場所をチェックしておきましょう。</li>
+              <li>
+                津波警報等は、テレビやラジオ、携帯電話、サイレン、鐘等、様々な手段で伝達されますが、令和2年夏から海水浴場等で「津波フラッグ」による視覚的伝達が行われています。
+                海水浴場や海岸付近で津波フラッグを見かけたら、速やかに避難を開始してください。
+              </li>
+            </ul>
+            <div class="img-size-50">
+              <a href="images/tsunami-pict.png" data-lightbox="img05" data-title="津波標識">
+                <img src="images/tsunami-pict.png" alt="津波標識" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-max"></div>
+
+        <div class="linklist-main upface">
+          <h6>地震と津波に関する記事</h6>
+          <div class="yomiurimember">
+            <img class="lockicon" src="images/icon_lock-20230530053153.svg" />は読者会員限定
+          </div>
+
+          <div class="linklist-menu">
+            <div class="linklist-article">
+              <!-- <div class="linklist-menu-t">記事</div> -->
+              <div class="linklist-menu-item">
+                <div class="linklist-menu-item-head">
+                  <span>【関東大震災100年 連載】 残像</span>（全8回）
+                  <img class="lockicon-list" src="images/icon_lock-20230530053153.svg" />
+                </div>
+                <ul>
+                  <li><a href="##">崩れた最先端の要塞「第三海堡」</a></li>
+                  <li>
+                    <a href="##">山手80番館遺跡 「がれき」山下公園の礎に</a>
+                  </li>
+                  <li><a href="##">隅田川六大橋 復興の証し 健在</a></li>
+                  <li><a href="##">千葉・館山 隆起でつながった島</a></li>
+                  <li><a href="##">銀座・泰明小学校 復興の学びや</a></li>
+                  <li><a href="##">震生湖 地滑りで沢が湖に</a></li>
+                  <li><a href="##">旧相模川橋脚 鎌倉期の木柱出現</a></li>
+                  <li><a href="##">昭和通り、延焼防止へ道幅44メートルに</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="border-1px"></div>
+            <div class="linklist-menu-item link-next">
+              <ul>
+                <li>
+                  <a href="##">［あすへの考］ 平時の備え　企業の利益にる</a>
+                </li>
+                <li>
+                  <a href="##">関東大震災99年！犠牲者10万人超から学ぶべきことを歴史家に聞く</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="nextpage">
+          <a class="nextbtn" href="typhoon_heavyrain.html"
+            ><span>次へ</span><span>台風と大雨</span></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div id="gototop">
+        <img id="gototop-btn" src="images/gototop.svg" alt="このページのトップへ" />
+      </div>
+    </footer>
+    <script type="module" src="src/script/bousite.ts"></script>
+    <script type="module" src="src/script/earthquake_tsunami_chart.ts"></script>
+  </body>
+</html>

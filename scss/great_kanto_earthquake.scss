@@ -1,0 +1,88 @@
+@use "bousai_origin" as l;
+@use "bousai_template";
+@use "bousai_list";
+@use "bousai_header";
+@use "bousai_footer";
+@use "bousai_item";
+
+// 関東大震災ページ ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-------------
+
+.gke-fire-group {
+  background-color: l.$main-gr-c;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+#gke-fire-date {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20px;
+  width: auto;
+
+  p {
+    margin: 5px 10px 16px 10px;
+    font-size: 18px;
+    color: white;
+    line-height: 1.25;
+  }
+}
+
+.c-pointer {
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: l.$main-y-c;
+  }
+}
+
+#gke-fire-date p.c-pointer.clicked {
+  color: yellow;
+  text-decoration: none;
+}
+
+.gke-fire-img {
+  margin: 20px 10px 20px 0;
+  width: 230px;
+}
+
+.link-item {
+  text-align: center;
+  margin: 40px 0 30px 0;
+
+  p {
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  a {
+    font-weight: 600;
+    color: white;
+  }
+}
+
+.next-article-link {
+  margin: 10px auto 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 20px;
+  height: 40px;
+  background: black;
+  text-align: center;
+  width: fit-content;
+  justify-content: center;
+}
+
+.next-article-link {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    border: 20px solid transparent; /*吹き出しの縦幅*/
+    border-left: 15px solid l.$main-b-c; /*吹き出しの横幅*/
+  }
+}

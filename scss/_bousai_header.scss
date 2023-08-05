@@ -1,0 +1,187 @@
+@use "bousai_origin" as l;
+
+// header バッグ帯 --------------------------------------------------------
+
+#bousai-header {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.bousai-header-bg {
+  background-color: l.$main-y-c;
+  height: 55px;
+  margin: 0;
+  z-index: -100;
+}
+.bousai-header-bg-line {
+  background-image: url(/images/bousai-h_bg.svg);
+  background-color: l.$main-y-c;
+  background-repeat: repeat;
+  background-size: contain;
+  position: relative;
+  height: 12px;
+  margin: 0;
+}
+
+// ナビ 始まり--------------------------------------------------------
+
+// 開閉メニュー---------------------------------
+
+.navi-btn-main {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  max-width: 714px;
+}
+.naviBtn {
+  display: block;
+  position: absolute;
+  z-index: 13;
+  right: 16px;
+  top: -43px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+
+  @media screen and (min-width: 599px) {
+    right: 0;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    left: 6px;
+    background: l.$main-b-c;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+
+    &:nth-child(1) {
+      top: 10px;
+    }
+    &:nth-child(2) {
+      top: 20px;
+    }
+    &:nth-child(3) {
+      top: 30px;
+    }
+  }
+}
+// 開いてる時のボタン
+.naviBtn.active {
+  span {
+    &:nth-child(1) {
+      top: 16px;
+      left: 6px;
+      background: l.$main-b-c;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 16px;
+      background: l.$main-b-c;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.naviSp {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  color: l.$main-b-c;
+  background: l.$main-y-c;
+  text-align: center;
+  width: 50%;
+  height: 100vh;
+  opacity: 0;
+  margin-top: 15px;
+  // transition: opacity 0.6s ease;
+  visibility: hidden;
+
+  img {
+    margin-top: 50px;
+    width: 50%;
+  }
+
+  @media screen and (min-width: 599px) {
+    max-width: 714px;
+    position: absolute;
+    margin-top: 0;
+    width: 39%;
+  }
+}
+
+.menu-ul {
+  margin: 30px auto 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  transition: 0.4s all;
+  display: inline-block;
+  margin: 20px 0 0 0;
+  height: 39px;
+  font-size: 20px;
+  font-weight: 600;
+  color: l.$main-b-c;
+  text-align: center;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+  a {
+    display: inline-block;
+    color: l.$main-b-c;
+    position: relative;
+    text-decoration: none;
+    width: max-content;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      border-radius: 4px;
+      background-color: l.$main-b-c;
+      bottom: 0;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+
+  @media screen and (min-width: 599px) {
+    font-size: 25px;
+    margin: 25px 0 0 0;
+    img {
+      margin: 20px 0 0 0;
+      width: 39%;
+    }
+  }
+}
+
+// jQueryで
+nav.naviSp.active {
+  opacity: 1;
+  visibility: visible;
+}

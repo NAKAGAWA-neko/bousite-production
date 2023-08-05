@@ -1,0 +1,440 @@
+@use "bousai_origin" as l;
+
+//ロゴと見出し------------------------------------------------------------
+.bousai-logo_headline-main {
+  position: relative;
+  margin: 0 16px;
+  @media screen and (min-width: 599px) {
+    margin: 0;
+  }
+}
+
+.bousai-logo_headline {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: 599px) {
+    margin: 0 auto;
+    max-width: 714px;
+  }
+}
+
+.bousai-logo {
+  margin-top: -43px;
+
+  img {
+    height: 100%;
+    width: auto;
+    max-width: 145px;
+  }
+}
+
+.page-headline {
+  margin-top: 6px;
+  max-width: 180px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    max-height: 55px;
+  }
+}
+
+// レスポンシブでのロゴと見出しの大きさまとめ
+@media screen and (max-width: 350px) {
+  .bousai-logo {
+    margin-top: -55px;
+    img {
+      max-width: 120px;
+    }
+  }
+
+  .page-headline {
+    margin-left: 110px;
+
+    img {
+      max-height: 33px;
+    }
+  }
+  .bousai-logo_headline-main {
+    margin-bottom: -10px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .bousai-logo {
+    img {
+      max-width: 170px;
+    }
+  }
+  .page-headline {
+    top: 10px;
+    max-width: 210px;
+  }
+}
+@media screen and (min-width: 599px) {
+  .bousai-logo {
+    img {
+      max-width: 185px;
+    }
+  }
+
+  .page-headline {
+    top: 15px;
+    max-width: 230px;
+  }
+}
+
+// main--------------------------------------------------------
+
+#content-page {
+  margin: 0 16px;
+  position: relative;
+
+  @media screen and (min-width: 599px) {
+    margin: 0 auto;
+    max-width: 714px;
+  }
+}
+
+.content-main {
+  display: block;
+}
+
+#content-group-pc-flex {
+  @media screen and (min-width: 599px) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+#content-group-pc-flex-low {
+  @media screen and (min-width: 599px) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+}
+.content-group {
+  display: block;
+  margin-top: 30px;
+
+  @media screen and (min-width: 599px) {
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+.content-group-title-separate {
+  margin-bottom: -30px;
+}
+
+.content-g_img {
+  margin-top: 16px;
+  img {
+    width: 100%;
+  }
+  @media screen and (max-width: 600px) {
+    pointer-events: none;
+  }
+}
+
+.img-pconly {
+  text-align: center;
+  img {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.content-group-scroll {
+  display: block;
+  margin-top: 30px;
+}
+
+.content-g_img_scroll {
+  margin-top: 10px;
+  margin-right: -16px;
+  overflow-x: scroll;
+
+  @media screen and (min-width: 599px) {
+    margin-right: 0;
+  }
+}
+.cg_img_scroll-800 {
+  height: 800px;
+}
+
+.cg_img_scroll-1100 {
+  height: 1100px;
+}
+
+// チャート
+.content-chart {
+  margin-top: 10px;
+}
+
+.chartsize350 {
+  height: 350px;
+  @media (min-width: 599px) {
+    height: 400px;
+  }
+}
+
+// もしものケース部分---------------------------------------------------------
+.justincase_border {
+  width: 100%;
+  background-color: l.$main-b-c;
+  height: 5px;
+  margin: 50px 0 0 0;
+  border-radius: 3px;
+}
+
+.justincase {
+  background-color: l.$main-b-c;
+  border-radius: 8px 8px 0 0;
+  padding: 8px 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 30px;
+
+  h6 {
+    color: white;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.justincase-ul {
+  p {
+    span {
+      font-weight: 700;
+      margin: 0;
+      background-color: l.$main-bgy-c;
+      padding: 5px 8px;
+      border-radius: 5px 5px 0 0;
+      font-size: 17px;
+      display: inline-block;
+    }
+  }
+  ul {
+    margin-top: 5px;
+  }
+  li {
+    margin-left: -1rem;
+    text-align: justify;
+    margin-bottom: 3px;
+    font-weight: 500;
+  }
+  a {
+    color: darkblue;
+    font-weight: 600;
+  }
+}
+
+.li-bold {
+  ul {
+    list-style: none;
+    margin-left: -1.5rem;
+  }
+  li {
+    font-weight: 600;
+  }
+}
+.ul-cap {
+  margin-top: -10px;
+  ul {
+    list-style: none;
+    margin-left: -1.5rem;
+  }
+}
+
+.justincase-lead {
+  text-align: justify;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.justincase_subtitle {
+  color: l.$main-b-c;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.justincase-cap {
+  text-align: justify;
+  margin-top: -10px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  color: rgb(50, 50, 50);
+  line-height: 1.5;
+}
+
+.img-size-50 {
+  margin-top: 16px;
+  text-align: center;
+  img {
+    width: 50%;
+  }
+  @media screen and (max-width: 600px) {
+    pointer-events: none;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// リンク部分------------------------------------------
+.yomiurimember {
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.lockicon {
+  height: 20px;
+  margin: -2px 0 0 0;
+}
+
+.linklist-photo {
+  display: block;
+  position: relative;
+}
+
+.linklist-menu-t {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: l.$main-gr-c;
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+}
+
+.linklist-photo-i {
+  margin-bottom: 20px;
+}
+
+.linklist-photo-img {
+  width: 100%;
+  height: 180px;
+  margin-top: 5px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 100%;
+  }
+}
+
+.linklist-menu-item {
+  span {
+    font-weight: 600;
+  }
+  ul {
+    margin: 5px 0 0 0;
+  }
+  li {
+    margin: 0 0 5px -15px;
+  }
+}
+
+.lockicon-list {
+  img {
+    height: 15px;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.linklist-menu-item-head {
+  display: flex;
+
+  align-items: center;
+}
+.lockicon-list {
+  height: 20px;
+  margin: -3px 0 0 -3px;
+}
+
+.link-next {
+  margin-top: 20px;
+}
+
+.nextpage {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.nextbtn {
+  /*テキストの基点とするためrelativeを指定*/
+  position: relative;
+  /*ボタンの形状*/
+  border: 1px solid l.$main-b-c;
+  border-radius: 5px;
+  min-width: 210px;
+  padding: 20px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: l.$main-b-c;
+  outline: none;
+  /*アニメーションの指定*/
+  transition: all 0s;
+
+  /*hoverした際の変化*/
+  &:hover {
+    background: l.$main-b-c;
+    color: white;
+  }
+
+  span {
+    /*絶対配置でテキストの位置を決める*/
+    position: absolute;
+    font-weight: 600;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*アニメーションの指定*/
+    transition: all 0.1s;
+    /*ブロック要素にしてテキスト折り返しなし*/
+    display: block;
+    white-space: nowrap;
+
+    /*差し替わるテキストの設定*/
+    &:nth-child(2) {
+      opacity: 0; /*透過0に*/
+    }
+  }
+
+  /*hoverするとテキストが入れ替わる設定*/
+  &:hover {
+    span {
+      &:nth-child(1) {
+        opacity: 0; /*透過0に*/
+      }
+
+      &:nth-child(2) {
+        opacity: 1; /*不透明に*/
+      }
+    }
+  }
+}

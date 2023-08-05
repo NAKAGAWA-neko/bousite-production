@@ -1,0 +1,154 @@
+@use "bousai_origin" as l;
+@use "bousai_template";
+@use "bousai_list";
+@use "bousai_header";
+@use "bousai_footer";
+@use "bousai_item";
+
+.changebtn-po {
+  position: relative;
+  //   min-height: 50px; // 例：50pxの高さを持たせる
+}
+.changebtn,
+#change-ty-btn,
+.lhr-c-btn {
+  z-index: 999; // ここに追加
+  border: none;
+  background-color: l.$main-y-c;
+  font-size: 16px;
+  color: l.$main-b-c;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 2px 4px;
+  text-align: right;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#change-ty-btn {
+  top: 10px;
+}
+
+// table部分---------------------
+.typhoon-item-main {
+  @media screen and (min-width: 599px) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+table.typhoon-table {
+  margin: 0 auto;
+  width: 100%;
+  border: none;
+  text-align: left;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  // background-image: url(/images/typhoon-1.jpg);
+  // background-position: right top;
+  // background-repeat: no-repeat;
+  // background-size: contain;
+
+  th {
+    background-color: l.$main-y2-c;
+    border-radius: 3px 0 0 3px;
+    padding: 4px 10px;
+    width: 0;
+    white-space: nowrap;
+    color: white;
+    line-height: 1.3;
+  }
+  td {
+    line-height: 1.3;
+    span {
+      padding: 4px 10px;
+      background-color: white;
+    }
+  }
+}
+
+/*アコーディオン全体*/
+.typhoon-item {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+
+  @media screen and (min-width: 599px) {
+    flex-basis: calc(50% - 10px);
+  }
+  img {
+    width: 100%;
+  }
+}
+
+/*アコーディオンタイトル*/
+.typhoon-item-title {
+  background-color: l.$main-b-c;
+  margin-top: 16px;
+  border-radius: 10px 0 0 0;
+  position: relative; /*+マークの位置基準とするためrelative指定*/
+  cursor: pointer;
+  // font-size: 1rem;
+  // font-weight: normal;
+  // padding: 3% 3% 3% 50px;
+  transition: all 0.5s ease;
+
+  P {
+    color: white;
+    padding: 4px 8px 4px 14px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  /*アイコンの＋と×*/
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 3px;
+    background-color: l.$main-y-c;
+  }
+
+  &::before {
+    top: 48%;
+    right: 15px;
+    transform: rotate(0deg);
+  }
+  &::after {
+    top: 48%;
+    right: 15px;
+    transform: rotate(90deg);
+  }
+
+  /*　closeというクラスがついたら形状変化　*/
+  &.close::before {
+    transform: rotate(45deg);
+  }
+
+  &.close::after {
+    transform: rotate(-45deg);
+  }
+}
+/*アコーディオンで現れるエリア*/
+.typhoon-item-box {
+  display: none; /*はじめは非表示*/
+  background: white;
+}
+
+.ty-hr-adjustment-1 {
+  margin-bottom: 50px;
+}
+
+.ty-hr-adjustment-2 {
+  margin-bottom: 80px;
+  @media screen and (max-width: 550px) {
+    margin-bottom: 120px;
+  }
+  @media screen and (max-width: 365px) {
+    margin-bottom: 140px;
+  }
+}

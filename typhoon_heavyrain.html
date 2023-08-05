@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#19170d" />
+    <link rel="stylesheet" href="src/style/typhoon.css" />
+
+    <title>台風と大雨の災害データ / 防災サイト「防サイト」/</title>
+  </head>
+  <body>
+    <header>
+      <section id="bousai-header">
+        <div class="bousai-header-bg">
+          <div class="bousai-header-bg-line"></div>
+        </div>
+        <!-- navi--------------------- -->
+
+        <div class="navi-main">
+          <div class="navi-btn-main">
+            <div class="naviBtn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <nav class="naviSp">
+              <ul class="menu-ul">
+                <li class="menu">
+                  <a href="great_kanto_earthquake.html">関東大震災</a>
+                </li>
+                <li class="menu">
+                  <a href="earthquake_tsunami.html">地震と津波</a>
+                </li>
+                <li class="menu">
+                  <a href="typhoon_heavyrain.html">台風と大雨</a>
+                </li>
+                <li class="menu"><a href="volcanic_eruption.html">火山噴火</a></li>
+                <li class="menu"><a href="bousai_evacuation.html">避難</a></li>
+                <li class="menu">
+                  <a href="bousai_scenario.html">災害のシナリオ</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <!-- logo headline--------------------- -->
+    <div class="bousai-logo_headline-main">
+      <div class="bousai-logo_headline">
+        <div class="bousai-logo">
+          <a href="index.html"
+            ><img src="images/bousai-logo.svg" alt="防サイトのトップページへ"
+          /></a>
+        </div>
+        <div class="page-headline">
+          <h1>
+            <img src="images/typhoon_rain_title.svg" alt="関東大震災" />
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section id="content-page">
+        <div class="lead">
+          <h3 class="h3_text_only">
+            関東大震災100年にあたる今年、防災の一環として、関東大震災100年にあたる今年さまざまな災害のデータを見てみる関東大震災100年にあたる今年さまざまな災害のデータを見てみる関東大震災100年にあたる今年さまざまな災害のデータを見てみるさまざまな災害のデータを見てみる。近年は地震も多い印象
+            関東大震災100年にあたる今年さまざまな災害のデータを見てみる。近年は地震も多い印象
+          </h3>
+        </div>
+
+        <div class="content-main">
+          <!-- コンテンツ始まり -->
+
+          <!-- 台風の発生数と日本に上陸した数 -->
+          <div class="content-group upface_op">
+            <h5>台風の発生数と日本に上陸した数</h5>
+            <p class="notes">※日本標準時基準。23年は7月19日まで。気象庁から</p>
+            <div class="content-chart chartsize350">
+              <canvas id="typhoonNumLandChart"></canvas>
+            </div>
+          </div>
+
+          <!-- 日本に上陸・最接近した主な台風の被害と進路図 -->
+          <div class="content-group upface_op ty-hr-adjustment-1">
+            <h5>日本に上陸・最接近した主な台風の被害と進路図</h5>
+            <p class="notes">気象庁から</p>
+            <div class="typhoon-item-main">
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>室戸台風</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>911.8hPa</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>1934年9月21日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>2702人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>334人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>14994人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>92740棟</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>棟</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>401157棟</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>棟</span></p>
+                        </td>
+                      </tr> -->
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-1.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>枕崎台風</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>916.1hPa</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>1945年9月17日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>2473人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>1283人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>2452人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>89839棟</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>棟</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>273888棟</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>棟</span></p>
+                        </td>
+                      </tr> -->
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-2.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>カスリーン台風</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <!-- <tr>
+                        <th>最接近時気圧</th>
+                        <td>
+                          <p><span>hPa</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>最接近年月日</th>
+                        <td>
+                          <p><span>1947年9月15日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>1077人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>853人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>1547人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>9298棟</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>棟</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>384743棟</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>棟</span></p>
+                        </td>
+                      </tr> -->
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-3.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>ルース台風</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>935hPa</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>1951年10月14日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>572人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>371人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>2,644人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>24716棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>47948棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>30110棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>108163棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-4.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>洞爺丸台風</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>966hPa</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>1954年9月26日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>1361人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>400人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>1601人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>8396棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>21771棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>17569棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>85964棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-5.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>狩野川台風</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>955hPa</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>1958年9月26日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>888人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>381人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>1138人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>2118棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>2175棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>132227棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>389488棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-6.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>伊勢湾台風</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>929hPa</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>1959年9月26日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>4697人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>401人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>38921人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>40838棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>113052棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>157858棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>205753棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-7.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>第二室戸台風</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>925hPa</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>1961年9月16</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>194人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>8人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>4972人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>15238棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>46663棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>123103棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>261017棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-8.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>平成3年台風第19号</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>940hPa</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>1991年9月27日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者・行方不明者</th>
+                        <td>
+                          <p><span>62人</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>人</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>1499人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家被害</th>
+                        <td>
+                          <p><span>170447棟</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>棟</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>床上・床下浸水</th>
+                        <td>
+                          <p><span>22965棟</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>棟</span></p>
+                        </td>
+                      </tr> -->
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-9.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>平成5年台風第13号</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>930hPa</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>1993年9月3日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者・行方不明者</th>
+                        <td>
+                          <p><span>48人</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>人</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>396人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>336棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>1448棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>3770棟</span></p>
+                        </td>
+                      </tr>
+                      <!-- <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>不詳</span></p>
+                        </td>
+                      </tr> -->
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-10.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>平成16年台風第18号</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <!-- <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>hPa</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>2004年9月7日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>43人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>3人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>1399人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>144棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>1506棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>1328棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>19758棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-11.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>平成16年台風第23号</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <!-- <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>hPa</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>2004年10月20日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>95人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>3人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>721人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>907棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>7929棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>13341棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>41006棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-12.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>平成23年台風第12号</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <!-- <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>hPa</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>2011年9月3日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>82人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>16人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>113人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>379棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>3159棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>5500棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>16594棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-13.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>平成25年台風第26号</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <!-- <tr>
+                        <th>再接近時気圧</th>
+                        <td>
+                          <p><span>hPa</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>再接近年月日</th>
+                        <td>
+                          <p><span>2013年10月16日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>40人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>3人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>130人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>86棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>61棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>1884棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>4258棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-14.png" />
+                  </div>
+                </div>
+              </div>
+              <!-- typhoon-item -->
+              <div class="typhoon-item">
+                <div class="typhoon-item-title"><p>令和元年東日本台風（第19号）</p></div>
+                <div class="typhoon-item-box">
+                  <div class="changebtn-po">
+                    <button id="change-ty-btn" class="changebtn-ty changebtn-space">進路図</button>
+                  </div>
+                  <div class="typhoon-change-1-1">
+                    <table class="typhoon-table">
+                      <!-- <tr>
+                        <th>上陸時気圧</th>
+                        <td>
+                          <p><span>hPa</span></p>
+                        </td>
+                      </tr> -->
+                      <tr>
+                        <th>上陸年月日</th>
+                        <td>
+                          <p><span>2019年10月12日</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>死者</th>
+                        <td>
+                          <p><span>107人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>行方不明者</th>
+                        <td>
+                          <p><span>3人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>負傷者</th>
+                        <td>
+                          <p><span>384人</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>住家全壊・流失</th>
+                        <td>
+                          <p><span>3144棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>半壊</th>
+                        <td>
+                          <p><span>28836棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床上浸水</th>
+                        <td>
+                          <p><span>7076棟</span></p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>床下浸水</th>
+                        <td>
+                          <p><span>22796棟</span></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="typhoon-change-1-2">
+                    <img class="typhoon-course" src="/images/typhoon-trackmap-15.png" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- typhoon-item終了 -->
+            </div>
+          </div>
+
+          <!-- 1時間降水量 -->
+          <div class="content-group upface_op ty-hr-adjustment-2">
+            <div class="changebtn-po">
+              <button class="lhr-c-btn">80mm</button>
+            </div>
+
+            <!-- localheavyr-50 -->
+            <div class="content-chart chartsize350 localheavyr-1">
+              <h5>
+                1時間降水量<span class="newline400"><br /></span>50mm以上の<span class="newline550"
+                  ><br /></span
+                >年間発生回数
+              </h5>
+              <p class="notes">※1975～2022年。全国のアメダス、気象庁から</p>
+              <canvas id="localHeavyR50Chart"></canvas>
+            </div>
+
+            <!-- localheavyr-80-->
+            <div class="content-chart chartsize350 localheavyr-2">
+              <h5>
+                1時間降水量<span class="newline400"><br /></span>80mm以上の<span class="newline550"
+                  ><br /></span
+                >年間発生回数
+              </h5>
+              <p class="notes">※1975～2022年。気象庁から</p>
+              <canvas id="localHeavyR80Chart"></canvas>
+            </div>
+
+            <!--localheavyr-100 -->
+            <div class="content-chart chartsize350 localheavyr-3">
+              <h5>
+                1時間降水量<span class="newline400"><br /></span>100mm以上の<span class="newline550"
+                  ><br /></span
+                >年間発生回数
+              </h5>
+              <p class="notes">※1975～2022年。気象庁から</p>
+              <canvas id="localHeavyR100Chart"></canvas>
+            </div>
+          </div>
+
+          <!--記録的短時間大雨情報-->
+
+          <div class="content-group upface_op">
+            <h5>記録的短時間大雨情報</h5>
+            <p class="notes">※2023年はx月まで。気象庁から</p>
+            <div class="content-chart chartsize350">
+              <canvas id="rainRecordStChart"></canvas>
+            </div>
+          </div>
+
+          <!-- 大雨特別警報 -->
+          <div class="content-group upface_op">
+            <div class="changebtn-po">
+              <button class="changebtn">月別</button>
+            </div>
+            <div class="content-change content-change-1">
+              <!-- prettier-ignore -->
+              <h5>大雨特別警報の<span class="newline360"><br /></span>年別回数</h5>
+              <p class="notes">※1919～2023年。23年は6月まで。気象庁から</p>
+              <div class="content-chart chartsize350">
+                <canvas id="rainSpWarningYeChart"></canvas>
+              </div>
+            </div>
+
+            <div class="content-change content-change-2">
+              <!-- prettier-ignore -->
+              <h5>大雨特別警報の<span class="newline360"><br /></span>月別回数</h5>
+              <p class="notes">※1919～2023年。23年は6月まで。気象庁から</p>
+              <div class="content-chart chartsize350">
+                <canvas id="rainSpWarningMoChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div id="content-group-pc-flex">
+            <!-- 土砂災害発生件数 -->
+            <div class="content-group upface_op">
+              <h5>土砂災害発生件数</h5>
+              <p class="notes">※気象庁から</p>
+              <div class="content-g_img">
+                <a
+                  href="images/typhoon_heavyrain_disaster_1.png"
+                  data-lightbox="img005"
+                  data-title="土砂災害発生件数"
+                >
+                  <img
+                    src="images/typhoon_heavyrain_disaster_1.png"
+                    alt="土砂災害発生件数のグラフ"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 大雨・台風の時はどのように行動したらいいか？ -->
+        <div class="justincase-main">
+          <div class="justincase margin-top50">
+            <h6>大雨・台風の時はどのように行動したらいいか？</h6>
+          </div>
+          <div class="notes moji-right">※首相官邸ホームページから</div>
+
+          <div class="justincase-lead">
+            台風や大雨の危険が近づいているというニュースや気象情報を見聞きしたら、危険な場所には近づかないようにしましょう。
+          </div>
+          <div class="justincase-ul">
+            <p><span>災害への備えをもう一度確認して下さい。</span></p>
+            <ul>
+              <li>非常用持ち出し品の点検をしましょう</li>
+              <li>雨や風が強くなる前に、家屋の補強などの対策をしましょう</li>
+              <li>避難場所までの道順を確認しておきましょう</li>
+              <li>日頃からハザードマップで危険箇所や避難場所をチェックしておきましょう</li>
+              <li>雨が降り出したら土砂災害警戒情報等にも注意しましょう</li>
+              <li>
+                危険を感じたり、市町村⻑からの避難指示等があった場合は、あわてず速やかに避難しましょう
+              </li>
+              <li>避難の前には、必ず火の始末をしましょう</li>
+              <li>
+                避難の際の持ち物は最小限にして背中に背負うなど、両手が自由に使えるようにしておきましょう
+              </li>
+            </ul>
+          </div>
+
+          <div class="ul-cap">
+            <ul>
+              <li>
+                ※川の氾濫や土砂災害などの災害は一気に起こるため、避難が遅れると命にかかわります。天候が荒れてからでは移動も大変になりますので、特に⾼齢者や幼い⼦どものいる家庭などは、警戒レベル３高齢者等避難が出たタイミング等、早い段階から避難しましょう。
+              </li>
+              <li>※忘れ物をした場合でも、取りに戻るのは危険ですので絶対にやめましょう！</li>
+              <li>
+                ※暴風や浸⽔で避難場所への避難が危険な場合は家の中のできるだけ安全な場所（崖から離れた２
+                階の部屋）で待機したり、近隣のできるだけ頑丈な建物へ移動することも考えてみましょう。
+              </li>
+            </ul>
+          </div>
+
+          <div class="justincase">
+            <div>
+              <h6><span>土砂災害から身を守るには</span></h6>
+            </div>
+          </div>
+          <div class="notes moji-right moji-ma-top10">※首相官邸ホームページから</div>
+          <div class="justincase-lead">
+            土砂災害から身を守るためには、私たち一人ひとりが土砂災害に対して日頃から備えておくことが重要です。ここでは、土砂災害から身を守るために最低限知っておくべき３つのポイントを紹介します。
+          </div>
+          <div class="justincase-ul">
+            <p><span>1. お住まいの場所が、土砂災害警戒区域か確認</span></p>
+            <ul>
+              <li>
+                土砂災害のおそれのある地区は「土砂災害警戒区域」や「土砂災害危険箇所」とされています。普段から自分の家がこれらの土砂災害のおそれのある地区にあるかどうか、都道府県や国土交通省のホームページ別ウィンドウで開くなどで確認しましょう。<br />
+              </li>
+              <li>
+                避難の際にどこにどのように逃げるのか知っておくことが大事です。市町村が作成する土砂災害ハザードマップを利用して避難場所や避難経路を確認しましょう。<br />
+              </li>
+            </ul>
+            <div class="ul-cap">
+              <ul>
+                <li>
+                  ※ただし、土砂災害警戒区域等でなくても、土砂災害が発生する場合があります。付近に「がけ地」や「小さな沢」があれば注意を。
+                </li>
+              </ul>
+            </div>
+
+            <div class="justincase-ul">
+              <p><span>2. 土砂災害警戒情報や雨量の情報に注意</span></p>
+              <ul>
+                <li>
+                  雨が降り出したら、「土砂災害警戒情報」に注意しましょう。これは、警戒レベル４相当情報であり、市町村が警戒レベル４避難指示を発令する目安となる情報で、災害のおそれが高まっていることを示しています。
+                </li>
+                <li>
+                  土砂災害警戒情報は、気象庁ホームページや各都道府県の砂防課などのホームページで確認できるほか、テレビやラジオの気象情報でも発表されます。都道府県や市町村によっては、携帯電話などに⾃動的に⼟砂災害警戒情報を教えてくれるサービスもあります。
+                </li>
+              </ul>
+            </div>
+
+            <div class="justincase-ul">
+              <p><span>3. 警戒レベル４で危険な場所から全員避難</span></p>
+              <ul>
+                <li>
+                  お住まいの地域に⼟砂災害警戒情報（警戒レベル４相当情報）が発表されたら、自治体からの警戒レベル４避難指⽰の発令に留意し、⼟砂キキクル（⼤⾬警報（⼟砂災害）の危険度分布）などを参考にし、地域内の方々に声をかけあい近くの避難場所など、安全な場所に避難しましょう。
+                  特に、お年寄りや障害のある人など避難に時間がかかる人や、夜中に大雨が想定される場合は、警戒レベル３高齢者等避難が発令されたタイミング等で早めに避難することがより安全です。
+                  <div class="img-size-50">
+                    <a
+                      href="images/heavyrain-warninglevel.png"
+                      data-lightbox="img03"
+                      data-title="大雨特別警戒レベルと取るべき行動"
+                    >
+                      <img
+                        src="images/heavyrain-warninglevel.png"
+                        alt="大雨特別警戒レベルと取るべき行動"
+                      />
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  ⼟砂災害の多くは⽊造の１階で被災しています。浸水などで避難場所への避難が困難なときは、近くの頑丈な建物の２階以上や、家の中でより安全な場所（がけから離れた部屋や２階など）に移動しましょう。
+                </li>
+              </ul>
+            </div>
+
+            <div class="justincase-ul">
+              <p><span>土砂災害の主な前兆現象</span></p>
+              <div class="justincase-lead">
+                土砂災害警戒情報等が発表されていなくても、以下のような状況（土砂災害の前兆現象）になっ
+                ていた場合は、直ちに周りの人と安全な場所に避難し、市町村等に連絡してください。
+              </div>
+              <ul>
+                <li>がけや地面にひび割れができる、がけや斜面から水が湧き出る</li>
+                <li>井戸や川の水が濁る、湧き水が止まる、濁る</li>
+                <li>小石がバラバラと落ちてくる、地鳴り・山鳴りがする</li>
+                <li>降雨が続くのに川の水位が下がる</li>
+                <li>樹木が傾く、立木が裂ける音や石がぶつかり合う音が聞こえる</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-max"></div>
+
+        <div class="linklist-main upface">
+          <h6>地震と津波に関する記事</h6>
+          <div class="yomiurimember">
+            <img class="lockicon" src="images/icon_lock-20230530053153.svg" />は読者会員限定
+          </div>
+
+          <div class="linklist-menu">
+            <div class="linklist-article">
+              <!-- <div class="linklist-menu-t">記事</div> -->
+              <div class="linklist-menu-item">
+                <div class="linklist-menu-item-head">
+                  <span>【関東大震災100年 連載】 残像</span>（全8回）
+                  <img class="lockicon-list" src="images/icon_lock-20230530053153.svg" />
+                </div>
+                <ul>
+                  <li><a href="##">崩れた最先端の要塞「第三海堡」</a></li>
+                  <li>
+                    <a href="##">山手80番館遺跡 「がれき」山下公園の礎に</a>
+                  </li>
+                  <li><a href="##">隅田川六大橋 復興の証し 健在</a></li>
+                  <li><a href="##">千葉・館山 隆起でつながった島</a></li>
+                  <li><a href="##">銀座・泰明小学校 復興の学びや</a></li>
+                  <li><a href="##">震生湖 地滑りで沢が湖に</a></li>
+                  <li><a href="##">旧相模川橋脚 鎌倉期の木柱出現</a></li>
+                  <li><a href="##">昭和通り、延焼防止へ道幅44メートルに</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="border-1px"></div>
+            <div class="linklist-menu-item link-next">
+              <ul>
+                <li>
+                  <a href="##">［あすへの考］ 平時の備え　企業の利益にる</a>
+                </li>
+                <li>
+                  <a href="##">関東大震災99年！犠牲者10万人超から学ぶべきことを歴史家に聞く</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="nextpage">
+          <a class="nextbtn" href="typhoon_heavyrain.html"
+            ><span>次へ</span><span>火山噴火</span></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div id="gototop">
+        <img id="gototop-btn" src="images/gototop.svg" alt="このページのトップへ" />
+      </div>
+    </footer>
+    <script type="module" src="src/script/bousite.ts"></script>
+    <script type="module" src="src/script/typhoon_heavyrain_chart.ts"></script>
+    <script type="module" src="src/script/typhoon_heavyrain.ts"></script>
+  </body>
+</html>
