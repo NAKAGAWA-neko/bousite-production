@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#19170d" />
     <link rel="stylesheet" href="src/style/earthquake_tsunami.css" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Lightbox2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>地震と津波の災害データ / 防災サイト「防サイト」/</title>
   </head>
   <body>
@@ -52,9 +58,7 @@
     <div class="bousai-logo_headline-main">
       <div class="bousai-logo_headline">
         <div class="bousai-logo">
-          <a href="index.html"
-            ><img src="images/bousai-logo.svg" alt="防サイトのトップページへ"
-          /></a>
+          <a href="index.html"><img src="images/bousai-logo.svg" alt="防サイトのトップページへ" /></a>
         </div>
         <div class="page-headline">
           <h1>
@@ -85,9 +89,7 @@
 
         <div class="content-group upface_op">
           <h5>都道府県別 震度4以上の揺れを観測した回数</h5>
-          <p class="notes">
-            ※1919～2023年。23年はX月まで。東京都は伊豆諸島の577回を含まない。気象庁から
-          </p>
+          <p class="notes">※1919～2023年。23年はX月まで。東京都は伊豆諸島の577回を含まない。気象庁から</p>
           <div class="content-chart">
             <canvas id="eqdistrict" height="860"></canvas>
           </div>
@@ -103,10 +105,7 @@
                 data-lightbox="img01"
                 data-title="国内の最大震度6弱以上を観測した主な地震"
               >
-                <img
-                  src="images/g_earthquake_japan.png"
-                  alt="国内の最大震度6弱以上を観測した主な地震"
-                />
+                <img src="images/g_earthquake_japan.png" alt="国内の最大震度6弱以上を観測した主な地震" />
               </a>
             </div>
           </div>
@@ -162,11 +161,7 @@
 
           <div class="content-group upface_op">
             <div class="content-g_img">
-              <a
-                href="images/e-tsunami-2.png"
-                data-lightbox="img03"
-                data-title="世界で発生した規模が大きい主な地震"
-              >
+              <a href="images/e-tsunami-2.png" data-lightbox="img03" data-title="世界で発生した規模が大きい主な地震">
                 <img src="images/e-tsunami-2.png" alt="世界で発生した規模が大きい主な地震" />
               </a>
             </div>
@@ -197,9 +192,7 @@
             <p><span>人が大勢いる施設にいるとき</span></p>
             <ul>
               <li>あわてずに施設の係員や従業員などの指示に従う</li>
-              <li>
-                従業員などから指示がない場合は、その場で頭を保護し、揺れに備えて安全な姿勢をとる
-              </li>
+              <li>従業員などから指示がない場合は、その場で頭を保護し、揺れに備えて安全な姿勢をとる</li>
               <li>吊り下がっている照明などの下から退避するあわてて出口や階段に殺到しない</li>
             </ul>
 
@@ -258,18 +251,14 @@
               <li>
                 海水浴等により海岸付近にいる人は、「津波注意報」でも避難が必要です。海からあがる、海岸から離れるなど、すぐに避難を開始してください。
               </li>
-              <li>
-                避難をする時は、近くの高台や津波避難タワー、津波避難ビルなどに向かってください。
-              </li>
+              <li>避難をする時は、近くの高台や津波避難タワー、津波避難ビルなどに向かってください。</li>
               <li>
                 第一波の引いた後に家に戻り第二波にのみこまれ被害に遭ったケースや、余震により再度津波が発生するケースもあり、津波警報・注意報が解除され安全が確認されるまでは決して被災地域には立ち入らないでください。
               </li>
               <li>
                 津波の災害から身を守るためには、日頃から津波に関する情報を収集したり、津波ハザードマップなどで家の周りの安全な避難場所を確認しておくことが必要です。
               </li>
-              <li>
-                津波は想像を超える速さ、あるいは想像を超える場所からやってくることを認識しておきましょう。
-              </li>
+              <li>津波は想像を超える速さ、あるいは想像を超える場所からやってくることを認識しておきましょう。</li>
             </ul>
 
             <div class="img-size-50 margin-bottom20">
@@ -287,12 +276,8 @@
               <li>
                 津波の危険がある場所には、津波が来襲する危険があることを示す「津波注意」のほか、津波避難場所や津波避難ビルを示す津波標識が設置されています。万一に備え、海の近くにいるときには必ず確認しておきましょう。
               </li>
-              <li>
-                また、最寄りの津波避難場所や津波避難ビル、高台などへの経路を確認しておきましょう。
-              </li>
-              <li>
-                避難をする時は、近くの高台や津波避難タワー、津波避難ビルなどに向かってください。
-              </li>
+              <li>また、最寄りの津波避難場所や津波避難ビル、高台などへの経路を確認しておきましょう。</li>
+              <li>避難をする時は、近くの高台や津波避難タワー、津波避難ビルなどに向かってください。</li>
               <li>日頃からハザードマップで危険箇所や避難場所をチェックしておきましょう。</li>
               <li>
                 津波警報等は、テレビやラジオ、携帯電話、サイレン、鐘等、様々な手段で伝達されますが、令和2年夏から海水浴場等で「津波フラッグ」による視覚的伝達が行われています。
@@ -353,9 +338,7 @@
         </div>
 
         <div class="nextpage">
-          <a class="nextbtn" href="typhoon_heavyrain.html"
-            ><span>次へ</span><span>台風と大雨</span></a
-          >
+          <a class="nextbtn" href="typhoon_heavyrain.html"><span>次へ</span><span>台風と大雨</span></a>
         </div>
       </section>
     </main>
@@ -364,7 +347,7 @@
         <img id="gototop-btn" src="images/gototop.svg" alt="このページのトップへ" />
       </div>
     </footer>
-    <script type="module" src="src/script/bousite.ts"></script>
-    <script type="module" src="src/script/earthquake_tsunami_chart.ts"></script>
+    <script type="text/javascript" src="src/script/bousite_j.js"></script>
+    <script type="text/javascript" src="src/script/earthquake_tsunami_chart_j.js"></script>
   </body>
 </html>

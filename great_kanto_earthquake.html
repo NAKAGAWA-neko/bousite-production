@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#19170d" />
     <link rel="stylesheet" href="src/style/great_kanto_earthquake.css" />
+    <link rel="stylesheet" href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css" />
+    <script src="https://unpkg.com/scroll-hint@1.1.10/js/scroll-hint.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 
     <title>関東大震災 / 防災サイト「防サイト」/</title>
   </head>
@@ -83,7 +89,7 @@
             <h5>地震と震度分布</h5>
             <p class="notes">※武村特任教授著「関東大震災大東京圏の揺れを知る」などの図を改変</p>
             <div class="content-g_img_scroll">
-              <div class="img_scroll">
+              <div class="img_scroll js-scrollable">
                 <img class="cg_img_scroll-800" src="images/gke-img_main-1.jpg" alt="地震と震度分布" />
               </div>
             </div>
@@ -116,16 +122,26 @@
 
               <div class="gke-fire-group">
                 <div id="gke-fire-date">
-                  <p class="c-pointer clicked" onclick="changeimg('images/gke-img_fire-1.jpg',this)">1日<br />午後1時</p>
+                  <p class="c-pointer clicked" onclick="changeimg('images/gke-img_fire-1.jpg',this)">
+                    1日<br />午後1時
+                  </p>
                   <p>↓</p>
-                  <p class="c-pointer clicked" onclick="changeimg('images/gke-img_fire-2.jpg',this)">1日<br />午後7時</p>
+                  <p class="c-pointer clicked" onclick="changeimg('images/gke-img_fire-2.jpg',this)">
+                    1日<br />午後7時
+                  </p>
                   <p>↓</p>
-                  <p class="c-pointer clicked" onclick="changeimg('images/gke-img_fire-3.jpg',this)">2日<br />午前9時</p>
+                  <p class="c-pointer clicked" onclick="changeimg('images/gke-img_fire-3.jpg',this)">
+                    2日<br />午前9時
+                  </p>
                 </div>
                 <div class="content-g_img gke-fire-img">
                   <a href="images/gke-img_fire-1.jpg" data-lightbox="img03" data-title="繰り返す大地震">
                     <img id="area1" src="images/gke-img_fire-1.jpg" alt="火災の広がり方  1日午後1時" /> </a
-                  ><a href="images/gke-img_fire-2.jpg" data-lightbox="img03" data-title="火災の広がり方  1日午後7時"></a>
+                  ><a
+                    href="images/gke-img_fire-2.jpg"
+                    data-lightbox="img03"
+                    data-title="火災の広がり方  1日午後7時"
+                  ></a>
                   <a href="images/gke-img_fire-3.jpg" data-lightbox="img03" data-title="火災の広がり方  2日午前9時"></a>
                 </div>
               </div>
@@ -162,7 +178,9 @@
 
         <div class="linklist-main upface">
           <h6>関東大震災に関する記事</h6>
-          <div class="yomiurimember"><img class="lockicon" src="images/icon_lock-20230530053153.svg" />は読者会員限定</div>
+          <div class="yomiurimember">
+            <img class="lockicon" src="images/icon_lock-20230530053153.svg" />は読者会員限定
+          </div>
           <div class="linklist-menu">
             <div class="linklist-photo">
               <div class="linklist-menu-t">写真で紹介</div>
@@ -243,9 +261,20 @@
       </div>
     </footer>
 
-    <script type="module" src="src/script/bousite.ts"></script>
-    <script type="module" src="src/script/great_kanto_earthquake.ts"></script>
-    <script type="module" src="src/script/scrollhint.ts"></script>
+    <script type="text/javascript" src="src/script/bousite_j.js"></script>
+    <script type="text/javascript" src="src/script/great_kanto_earthquake_j.js"></script>
+    <!-- <script type="text/javascript" src="scrollhint_j.js"></script> -->
+    <script>
+      window.onload = function () {
+        new ScrollHint(".js-scrollable", {
+          scrollHintIconAppendClass: "scroll-hint-icon-white", // white-icon will appear
+          applyToParents: true,
+          i18n: {
+            scrollable: "スクロールできます",
+          },
+        });
+      };
+    </script>
 
     <script type="text/javascript">
       const changeimg = (url, e) => {
